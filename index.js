@@ -169,40 +169,40 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 
 let computer = (Math.ceil(Math.random() * 3));
 if (computer === 1){
-  computer = "scissors"
+  computer = ("scissors");
 }
 if (computer === 2){
-  computer = "paper"
+  computer = ("paper");
 }
 if (computer === 3){
-  computer = "rock"
+  computer = ("rock");
 }
 
 function game(user , computer){
   if (computer === user){
-    return "It's a tie!";
+    console.log("It's a tie!");
   }
   else if (computer === "rock" && user === "paper" ){
-    return "You win!";
+    console.log("You win!");
   }
   else if (computer === "paper" && user === "scissors" ){
-    return "You win!";
+    console.log("You win!");
   }
   else if (computer === "scissors" && user === "rock" ){
-    return "You win!";
+    console.log("You win!");
   }
   else if (computer === "rock" && user === "scissors" ){
-    return "You lose!";
+    console.log("You lose!");
   }
   else if (computer === "paper" && user === "rock" ){
-    return "You lose!";
+    console.log("You lose!");
   }
   else if (computer === "scissors" && user === "paper" ){
-    return "You lose!";
+    console.log("You lose!");
   }
 }
 
-console.log(game(rock, paper)
+console.log(game('rock' , 'paper')
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -215,12 +215,12 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-,function miles(km){
-  var miles = km / 1.609;
+,function miles(kilometers){
+  var miles = kilometers / 1.609;
   console.log(miles);
 }
 
-console.log(miles(7))
+,console.log(miles(8)))
 
 
 
@@ -232,7 +232,7 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-,function feet(cm){
+function feet(cm){
   var feet = cm / 30.48;
   console.log(feet(3));
 }
@@ -254,10 +254,10 @@ Using the annoyingSong function below do the following:
 for(let i = 0; i < 5; i++){
   console.log(i);
 }
-const number(i);
+const number = (5);
 
 function annoyingSong(i){
-  let i = ""number bottles of soda on the wall, number bottles of soda, take one down pass it around {number left over} bottles of soda on the wall""
+  let number = " bottles of soda on the wall,  bottles of soda, take one down pass it around  bottles of soda on the wall"
 }
 
 console.log(annoyingSong)
@@ -279,21 +279,20 @@ Using the grade function below do the following:
 */
 
 ,function grade(score){
-  if (score >= 90){
+  if (score >=90){
     return "You got a A!";
   }
-  else if (score < 90 && >= 80){
+  else if (score <90 && score >=80){
     return "You got a B!";
   }
-  else if (score < 80 && >= 70){
+  else if (score <80 && score >=70){
     return "You got a C!";
   }
-  else if (score < 70 && >= 60){
+  else if (score <70 && score >=60){
     return "You got a D!";
   }
-  else (score < 60){
+  else (score <60);
     return "You got a F!";
-  }
 }
 
 console.log(grade(95))
