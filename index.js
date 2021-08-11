@@ -20,12 +20,13 @@ Do the following:
    HINT: no function required
 */
 
+const votingAge = 18;
 
-/*var votingAge = 18;
-if(votingAge >= 18)
-console.log(true)
-else
-console.log(false)
+if(votingAge >= 18){
+console.log(true);
+}else{
+console.log(false);
+}
 
 
 /*
@@ -40,12 +41,15 @@ Do the following:
 */
 
 
-/* var Test1 = 5;
-var Test2 = 4;
-if(5 > 4){
-  var Test1 = 7;
+let test1 = 5;
+let test2 = 4;
+if(test2 === 4){
+  test1 = 7;
+}else{
+  test1 = 5
 }
-console.log(Test1)
+
+console.log(test1);
 
 
 /*
@@ -59,12 +63,7 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-/*var string = "1999";
-if(string = "1999"){
-  var string = 1999;
-}
-console.log(string)
+console.log(Number('1999'));
 
 /*
 Task 1d - Multiply
@@ -78,6 +77,7 @@ Do the following:
 function multiply(a, b){
   return a * b;
 }
+console.log(multiply(9,9));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -90,8 +90,7 @@ Do the following:
 */
 
 function dogYears(age){
-  var dogYears = 7 * age;
-  console.log("Your dog is " + dogYears + " years old in dog years!");
+  return age * 7;
 }
 
 console.log(dogYears(9));
@@ -167,42 +166,35 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-let computer = (Math.ceil(Math.random() * 3));
-if (computer === 1){
-  computer = ("scissors");
-}
-if (computer === 2){
-  computer = ("paper");
-}
-if (computer === 3){
-  computer = ("rock");
+let computer = Math.random();
+
+if(computer <= 0.34){
+  computer = `rock`;
+}else if(computer <= 0.67){
+  computer = `paper`;
+}else if(computer > 0.67){
+  computer = `scissors`;
 }
 
-function game(user , computer){
-  if (computer === user){
-    console.log("It's a tie!");
-  }
-  else if (computer === "rock" && user === "paper" ){
-    console.log("You win!");
-  }
-  else if (computer === "paper" && user === "scissors" ){
-    console.log("You win!");
-  }
-  else if (computer === "scissors" && user === "rock" ){
-    console.log("You win!");
-  }
-  else if (computer === "rock" && user === "scissors" ){
-    console.log("You lose!");
-  }
-  else if (computer === "paper" && user === "rock" ){
-    console.log("You lose!");
-  }
-  else if (computer === "scissors" && user === "paper" ){
-    console.log("You lose!");
+function game(user, computer){
+  if(computer === user){
+    return `it's a tie`;
+  }else if (computer === `rock` && user === `paper`){
+    return `you win!`;
+  }else if (computer === `paper` && user === `scissors`){
+    return `you win!`;
+  }else if (computer === `scissors` && user === `rock`){
+    return `you win!`;
+  }else if (computer === `rock` && user === `scissors`){
+    return `you lose!`;
+  }else if (computer === `paper` && user === `rock`){
+    return `you lose!`;
+  }else if(computer === `scissors` && user === `paper`){
+    return `you lose!`;
   }
 }
 
-console.log(game('rock' , 'paper')
+console.log(game('rock' , computer));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -215,12 +207,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-,function miles(kilometers){
-  var miles = kilometers / 1.609;
-  console.log(miles);
+function miles(km){
+  return km * 0.621371;
 }
 
-,console.log(miles(8)))
+console.log(miles(8));
 
 
 
@@ -233,11 +224,10 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  var feet = cm / 30.48;
-  console.log(feet(3));
+  return cm / 30.48;
 }
 
-console.log(feet(3))
+console.log(feet(7));
 
 
 
@@ -251,16 +241,14 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-for(let i = 0; i < 5; i++){
-  console.log(i);
-}
-const number = (5);
-
-function annoyingSong(i){
-  let number = " bottles of soda on the wall,  bottles of soda, take one down pass it around  bottles of soda on the wall"
+function annoyingSong(number){
+  for(let i = number; i > 0; i --){
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`;
+  }
 }
 
-console.log(annoyingSong)
+console.log(annoyingSong(8));
+console.log(annoyingSong(7));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -278,24 +266,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-,function grade(score){
-  if (score >=90){
-    return "You got a A!";
+function grade(number){
+  if(number >= 90){
+    return `you got an A`;
+  }else if(number < 90 && number >= 80){
+    return `you got a B`;
+  }else if(number < 80 && number >= 70){
+    return `you got a C`
+  }else if(number < 70 && number >= 60){
+    return `you got a D`;
+  }else if(number < 60){
+    return `you got an F`;
   }
-  else if (score <90 && score >=80){
-    return "You got a B!";
-  }
-  else if (score <80 && score >=70){
-    return "You got a C!";
-  }
-  else if (score <70 && score >=60){
-    return "You got a D!";
-  }
-  else (score <60);
-    return "You got a F!";
 }
 
-console.log(grade(95))
+console.log(grade(95));
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -310,19 +295,19 @@ HINT - try looking up the .includes() method
 */
 
 
-,function vowelCounter() {
+function vowelCounter() {
 }
 
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-,function foo(){
-  console.log('its working');
+function foo(){
+  //console.log('its working');
   return 'bar';
 }
-,foo()
+foo()
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-,module.exports = {
+module.exports = {
   foo,
   multiply,
   dogYears,
